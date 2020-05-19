@@ -56,7 +56,7 @@ from keras.layers import Conv2D, MaxPooling2D, ZeroPadding2D
 from keras.layers.normalization import BatchNormalization
 from keras.models import Model
 
-# Set our class number to 3 (Young, Middle, Old)
+# Set our class number to 3 (As we have 3 classes to predict from)
 num_classes = 3
 
 FC_Head = lw(MobileNet, num_classes)
@@ -66,7 +66,7 @@ model = Model(inputs = MobileNet.input, outputs = FC_Head)
 print(model.summary())
 
 
-# ### Loading our Monkey Breed Dataset
+# ### Loading our Face Recogition Dataset
 
 # In[4]:
 
@@ -138,7 +138,7 @@ nb_train_samples = 801
 nb_validation_samples = 351
 
 # We only train 5 EPOCHS 
-epochs = 
+epochs = 5
 batch_size = 16
 
 history = model.fit_generator(
